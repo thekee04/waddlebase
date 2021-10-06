@@ -2,7 +2,7 @@ import json
 
 #Dictionary commands
 
-DB_FILE = ".dictionary.json"
+DB_FILE = "dictionary.json"
 
 def read():
     with open(DB_FILE, "r") as f:

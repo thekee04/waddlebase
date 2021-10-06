@@ -1,3 +1,3 @@
-from .db import *
+import db
 
 print (db.read())
