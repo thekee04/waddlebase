@@ -1,14 +1,11 @@
 from flask import Flask,render_template
-import random,string,db
+import random,db
 
 app = Flask(  # Create a flask app
 	__name__,
 	template_folder='websitefiles',  # Name of html file folder
 	static_folder='static'  # Name of directory for static files
 )
-
-ok_chars = string.ascii_letters + string.digits
-
 
 @app.route('/')  # What happens when the user visits the site
 def base_page():
@@ -18,13 +15,15 @@ def base_page():
 		random_number=random_num  # Sets the variable random_number in the template
 	)
 
-
 @app.route('/2')
 def page_2():
+	return render_template('site_2.html')
+
+@app.route('/3')
+def page_3():
 	rand_ammnt = random.randint(10, 100)
 	random_str = ''.join(random.choice(ok_chars) for a in range(rand_ammnt))
-	return render_template('site_2.html', random_str=random_str)
-
+	return render_template('db.html', db=db.read())
 
 if __name__ == "__main__":  # Makes sure this is the main process
 	app.run( # Starts the site
