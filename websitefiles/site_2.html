@@ -1,18 +1,32 @@
 <!doctype html>
 <head>
-	<title>Flask Tutorial!</title>
+	<title>Waddlebase</title>
 	<script src="/static/base.js"></script>
 	<link href="/static/base.css" rel="stylesheet" type="text/css">
-	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+  <link rel="icon" href="https://cdn.discordapp.com/avatars/409144850529910785/1e64f0ea0e0afca4708cd24a0957d01f.png?size=64">  
 </head>
 <body>
-	<h1>Hello!</h1>
-	<p>
-		Alec has a
-		<cb>E</cb>! <!--Gets the random number from the python file--> 
-	</p>
+  <div>
+  <form method="POST">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
 
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
 
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+  
+    <input type="submit" value="Submit">
+  </form>
+  </div>
+  <br>
+  <br>
 	<a href="/">Go back</a> <br>
   <a href="/3">Visit site 3</a>
 

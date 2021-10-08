@@ -1,4 +1,4 @@
-from flask import Flask,render_template
+from flask import Flask,render_template,request
 import random,db
 
 app = Flask(  # Create a flask app
@@ -19,10 +19,16 @@ def base_page():
 def page_2():
 	return render_template('site_2.html')
 
+@app.route('/2', methods=['GET','POST'])
+def my_form_post():
+    firstname = request.form['firstname']
+    lastname = request.form['lastname']
+    choice = request.form['country']
+    print([firstname,lastname,choice])
+    return render_template('site_2.html')
+
 @app.route('/3')
 def page_3():
-	rand_ammnt = random.randint(10, 100)
-	random_str = ''.join(random.choice(ok_chars) for a in range(rand_ammnt))
 	return render_template('db.html', db=db.read())
 
 if __name__ == "__main__":  # Makes sure this is the main process
